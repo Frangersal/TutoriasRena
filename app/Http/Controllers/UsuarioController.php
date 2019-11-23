@@ -15,7 +15,7 @@ class UsuarioController extends Controller
 
     public function tutor(){
 
-        return view('perfiltutor');
+        return view('tutor.perfil.perfil');
     }
 
     /* ---------------------**/

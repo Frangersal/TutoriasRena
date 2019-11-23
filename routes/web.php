@@ -146,3 +146,10 @@ Auth::routes();
 *Route::get('/pruebas', 'PuebasController@pruebas')->name('pruebas');
 
 */
+
+Route::get('tutor/prueba', function() {
+    return view('tutor.prueba');
+});
+Route::get('tutor/accion', function() {
+    return view('tutor.accion.index');
+});

@@ -147,9 +147,19 @@ Auth::routes();
 
 */
 
+/** ---RUTAS TUTOR  */
 Route::get('tutor/prueba', function() {
     return view('tutor.prueba');
 });
-Route::get('tutor/accion', function() {
+
+Route::get('tutor/accion/index', function () {
     return view('tutor.accion.index');
-});
+})->name('tutor.accion.index');
+
+Route::get('tutor/accion/perfil', function () {
+    return view('tutor.accion.perfil');
+})->name('tutor.accion.perfil');
+
+Route::get('tutor/accion/lista/alumnos', function () {
+    return view('tutor.accion.listaAlumnos');
+})->name('tutor.accion.listaAlumnos');

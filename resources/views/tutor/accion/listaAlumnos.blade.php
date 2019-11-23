@@ -32,31 +32,6 @@
                             <th>Accion</th>
                         </thead>
                         <tbody>
-                        <!-- For para colocar varias filas -->
-                            @foreach($formularios as $formulario)
-                            <tr>
-                                <td>                                 
-                                    {{ $formulario->titulo }}                               
-                                </td>
-                                <td>                                 
-                                    {{ $formulario->descripcion }}
-                                </td>
-                                <td> 
-                                    <!-- OJO codigo para EDITAR, copialo. OwO  -->                           
-                                    <a href="{{ route('admin.formulario.editar', $formulario->id)  }}" class="btn btn-warning btn-sm">Editar</a>
-                                    <!-- FIN codigo para EDITAR, de nada. UwU-->  
-                                    
-                                    <!-- OJO codigo para ELIMINAR, copialo. OwO  -->                           
-                                    <a href="javascript: document.getElementById('delete-{{$formulario->id}}').submit()" class="btn btn-danger btn-sm">Eliminar</a>
-                                    <form id="delete-{{$formulario->id}}" action="{{ route('admin.formulario.eliminar', $formulario->id) }}" method="POST">
-                                    @method('delete')
-                                    @csrf
-                                    </form>                                    
-                                    <!-- FIN codigo para ELIMINAR, de nada. UwU-->   
-
-                                </td>
-                            </tr>
-                            @endforeach
                         </tbody>
                    </table>
                 </div>

@@ -37,8 +37,12 @@
                    </table>
                 </div>
                 <div class="card-footer">
-                    Bienvenido :
-                   
+                    Bienvenido {{ auth()->user()->name }} Tu eres:
+                    <a href="javascript:document.getElementById('logout').submit()" class="btn btn-danger btn-sm float-right">Cerrar sesion</a>
+                    <form action="{{ route('logout') }}" id="logout" style="display:none" method="POST" >
+                    
+                    @csrf
+                    </form> 
                 </div>
             </div>
         </div>

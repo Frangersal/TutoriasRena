@@ -15,24 +15,24 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    Crear reactivos
+                    Crear FORMULARIO
                     
                 </div>
                 <div class="card-body">
                 
                     <!-- OJO codigo para AGREGAR, copialo. OwO  --> 
-                    <form action="{{ route('admin.reactivo.alta') }}" method="POST">
+                    <form action="{{ route('admin.formulario.alta') }}" method="POST">
                     @csrf
                         <div class="fore-group">
-                            <label for="">Tema</label>
-                            <input type="text" class="form-control" name="tema_formulario">                   
+                            <label for="">Titulo</label>
+                            <input type="text" class="form-control" name="titulo">                   
                         </div>
                         <div class="fore-group">
-                            <label for="">Reactivo</label>
-                            <input type="text" class="form-control" name="reactivo">                   
+                            <label for="">Descripcion</label>
+                            <input type="text" class="form-control" name="descripcion">                   
                         </div><br>
                         <button type="submit" class="btn btn-primary">Guardar</button>
-                        <a href="{{ route('admin.reactivo.index') }}" class="btn btn-danger">Cancelar</a>
+                        <a href="{{ route('admin.formulario.index') }}" class="btn btn-danger">Cancelar</a>
                     </form>                    
                     <!-- FIN codigo para AGREGAR, dena'a. UwU  --> 
 

@@ -15,27 +15,26 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    EDITAR reactivos
+                    Crear FORMULARIO
                     
                 </div>
                 <div class="card-body">
                 
-                    <!-- OJO codigo para EDITAR, copialo. OwO  --> 
-                    <form action="{{ route('admin.reactivo.actualizar', $formulario->id) }}" method="POST">
-                    @method('put')
+                    <!-- OJO codigo para AGREGAR, copialo. OwO  --> 
+                    <form action="{{ route('admin.formulario.alta') }}" method="POST">
                     @csrf
                         <div class="fore-group">
-                            <label for="">Tema</label>
-                            <input type="text" name="tema_formulario" value="{{ $formulario->tema_formulario }}" class="form-control" >                   
+                            <label for="">Titulo</label>
+                            <input type="text" class="form-control" name="titulo">                   
                         </div>
                         <div class="fore-group">
-                            <label for="">Reactivo</label>
-                            <input type="text" name="reactivo" value="{{ $formulario->reactivo }}"class="form-control" >                   
+                            <label for="">Descripcion</label>
+                            <input type="text" class="form-control" name="descripcion">                   
                         </div><br>
                         <button type="submit" class="btn btn-primary">Guardar</button>
-                        <a href="{{ route('admin.reactivo.index') }}" class="btn btn-danger">Cancelar</a>
+                        <a href="{{ route('admin.formulario.index') }}" class="btn btn-danger">Cancelar</a>
                     </form>                    
-                    <!-- FIN codigo para EDITAR, dena'a. UwU  --> 
+                    <!-- FIN codigo para AGREGAR, dena'a. UwU  --> 
 
                 </div>
             </div>

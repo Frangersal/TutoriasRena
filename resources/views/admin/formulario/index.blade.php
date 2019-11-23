@@ -15,20 +15,20 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    Lista de reactivos
-                    <a href="{{ route('admin.reactivo.crear') }}" class="btn btn-success btn-sm float-right">Nuevo reactivo</a>
+                    Lista de FORMULARIOS
+                    <a href="{{ route('admin.formulario.crear') }}" class="btn btn-success btn-sm float-right">Nuevo reactivo</a>
                 </div>
                 <div class="card-body">
                 
-                   @if(session('Reactivo'))
+                   @if(session('Formu'))
                    <div class="alert alert-success">
-                        {{ session('Reactivo') }}
+                        {{ session('Formu') }}
                    </div>                   
                    @endif
                    <table class="table table-hover table-sm">
                         <thead>
-                            <th>Tema</th>
-                            <th>Reactivo</th>
+                            <th>Titulo</th>
+                            <th>Descripcion</th>
                             <th>Accion</th>
                         </thead>
                         <tbody>
@@ -36,19 +36,19 @@
                             @foreach($formularios as $formulario)
                             <tr>
                                 <td>                                 
-                                    {{ $formulario->tema_formulario }}                               
+                                    {{ $formulario->titulo }}                               
                                 </td>
                                 <td>                                 
-                                    {{ $formulario->reactivo }}
+                                    {{ $formulario->descripcion }}
                                 </td>
                                 <td> 
                                     <!-- OJO codigo para EDITAR, copialo. OwO  -->                           
-                                    <a href="{{ route('admin.reactivo.editar', $formulario->id)  }}" class="btn btn-warning btn-sm">Editar</a>
+                                    <a href="{{ route('admin.formulario.editar', $formulario->id)  }}" class="btn btn-warning btn-sm">Editar</a>
                                     <!-- FIN codigo para EDITAR, de nada. UwU-->  
                                     
                                     <!-- OJO codigo para ELIMINAR, copialo. OwO  -->                           
                                     <a href="javascript: document.getElementById('delete-{{$formulario->id}}').submit()" class="btn btn-danger btn-sm">Eliminar</a>
-                                    <form id="delete-{{$formulario->id}}" action="{{ route('admin.reactivo.eliminar', $formulario->id) }}" method="POST">
+                                    <form id="delete-{{$formulario->id}}" action="{{ route('admin.formulario.eliminar', $formulario->id) }}" method="POST">
                                     @method('delete')
                                     @csrf
                                     </form>                                    
